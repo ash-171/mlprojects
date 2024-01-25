@@ -51,12 +51,10 @@ class DataIngestion:
 
 if __name__=='__main__':
     data_ingestion=DataIngestion()
-<<<<<<< HEAD
     train_data,test_data = data_ingestion.initiate_data_ingestion()  
 
     data_transformation = DataTransformation()
     data_transformation.initiate_data_transformation(train_data, test_data)       
-=======
     data_ingestion.initiate_data_ingestion()         
->>>>>>> 457dfcef0b36b1e87d4ee322c895cc14271d3885
+
 
