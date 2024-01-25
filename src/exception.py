@@ -1,6 +1,5 @@
 import sys
 
-
 def error_message_details(error,error_detail:sys):
     _,_,exc_tb = error_detail.exc_info()
     file_name = exc_tb.tb_frame.f_code.co_filename
@@ -19,20 +18,14 @@ class CustomException(Exception):
 ''' 
 Following is to test the exception file:
 
-# LOG_FILE = f"{datetime.now().strftime('%m_%d_%Y_%H_%M_%S')}.log"
-# logs_path = os.path.join(os.getcwd(),"logs",LOG_FILE)
-# os.makedirs(logs_path,exist_ok=True)
-# logging.basicConfig(
-#     filename = os.path.join(logs_path,LOG_FILE),
-#     format="[ %(asctime)s ] %(lineno)d %(name)s - %(levelname)s - %(message)s",
-#     level=logging.INFO
-# )
-    
-# if __name__=='__main__':
+from src.logger import logging
 
-#     try:
-#         a = 1/0
-#     except ZeroDivisionError as error:
-#         logging.info("division by zero")
-#         raise CustomException(error,sys)
-'''   
+if __name__=='__main__':
+
+    try:
+        a = 1/0
+    except ZeroDivisionError as error:
+        logging.info("division by zero")
+        raise CustomException(error,sys)
+  
+'''
