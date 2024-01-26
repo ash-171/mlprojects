@@ -14,8 +14,6 @@ from src.components.model_trainer import ModelTrainer
 from src.components.model_trainer import ModelTrainerConfig
 
 
-
-
 @dataclass
 class DataIngestionConfig:
     train_data_path: str=os.path.join('artifacts',"train.csv")
@@ -24,7 +22,7 @@ class DataIngestionConfig:
 
 class DataIngestion:
     def __init__(self):
-        self.ingestion_config=DataIngestionConfig()
+        self.ingestion_config = DataIngestionConfig()
 
     def initiate_data_ingestion(self):
         '''
@@ -55,7 +53,7 @@ class DataIngestion:
             raise CustomException(e,sys)
 
 if __name__=='__main__':
-    data_ingestion=DataIngestion()
+    data_ingestion = DataIngestion()
     train_data,test_data = data_ingestion.initiate_data_ingestion()  
 
     data_transformation = DataTransformation()
